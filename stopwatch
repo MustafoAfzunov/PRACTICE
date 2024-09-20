@@ -1,0 +1,58 @@
+import simplegui
+
+# Global variables
+time_tenths = 0
+total_stops = 0
+successful_stops = 0
+
+
+# Timer event handler
+def timer_handler():
+    global time_tenths
+    time_tenths += 1
+
+# Helper function to format time in tenths of seconds into A:BC.D
+def format(t):
+    minutes = t // 600
+    seconds = (t // 10) % 60
+    tenths = t % 10
+    return "{:01}:{:02}.{:1}".format(minutes, seconds, tenths)
+
+# Event handlers for buttons: "Start", "Stop", "Reset"
+def start_handler():
+    timer.start()
+
+def stop_handler():
+    global total_stops, successful_stops
+    timer.stop()
+    total_stops += 1
+    if time_tenths % 10 == 0:
+        successful_stops += 1
+
+def reset_handler():
+    global time_tenths, total_stops, successful_stops
+    timer.stop()
+    time_tenths = 0
+    total_stops = 0
+    successful_stops = 0
+
+# Draw handler
+def draw_handler(canvas):
+    canvas.draw_text(format(time_tenths), [70, 70], 24, 'White')
+    canvas.draw_text("Stops: {}/{}".format(successful_stops, total_stops), [10, 140], 18, 'Yellow')
+
+# Create frame
+frame = simplegui.create_frame("Stopwatch: The Game", 150, 150)
+# Create a timer with the specified interval
+timer = simplegui.create_timer(100, timer_handler)
+
+# Create buttons
+button_start = frame.add_button("Start", start_handler)
+button_stop = frame.add_button("Stop", stop_handler)
+button_reset = frame.add_button("Reset", reset_handler)
+
+# Register event handlers
+frame.set_draw_handler(draw_handler)
+
+# Start the frame
+frame.start()

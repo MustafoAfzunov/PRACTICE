@@ -1,0 +1,43 @@
+count = 0
+index = 0
+a = 0
+b = 0
+x = 0
+numberofoccurences = 0
+
+def count_substring(string, sub_string):
+    # Split the sub_string into a list of words
+    a = sub_string.split()
+    # Increment the count variable by the length of the sub_string
+    count += a[index]
+    # Increment the index variable by 1
+    index += 1
+    
+    # Split the string into a list of words
+    for i in range(string.split()):
+        # Loop while the variable x is less than 3
+        while x < 3:
+            # Add the current word to the variable a
+            a += i
+            # Check if the accumulated words in a match the count
+            if a == count:
+                # Increment the numberofoccurences variable
+                numberofoccurences += 1
+                # Increment the x variable
+                x += 1
+            else:
+                # Reset the x variable to 0
+                x = 0
+    # Return the number of occurrences
+    return numberofoccurences
+
+# Test the function with input 'ABCDCDC' and 'CDC'
+print(count_substring('ABCDCDC','CDC'))
+
+
+# if __name__ == '__main__':
+#     string = input().strip()
+#     sub_string = input().strip()
+    
+#     count = count_substring(string, sub_string)
+#     print(count)  

@@ -1,0 +1,25 @@
+import sympy as sp
+
+def check_convergence(a_n):
+    n = sp.Symbol('n')
+    limit = sp.limit(a_n/(a_n.subs(n, n+1)), n, sp.oo)
+    if limit < 1:
+        return "Converges"
+    elif limit > 1:
+        return "Diverges"
+    else:
+        return "Test inconclusive"
+
+def main():
+    # Get the general term of the series from the user
+    series_term = input("Enter the general term of the series a_n: ")
+    
+    # Parse the input expression using Sympy
+    a_n = sp.sympify(series_term)
+    
+    # Check convergence
+    result = check_convergence(a_n)
+    print("Series convergence result:", result)
+
+if __name__ == "__main__":
+    main()
