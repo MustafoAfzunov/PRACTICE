@@ -7,7 +7,7 @@ This repository contains a collection of Python scripts aimed at improving my Py
 1. **conver to dollar and cents**
    - A project that converts a given amount to dollars and cents.
 
-2. **desaf**
+2. **practice**
    - Placeholder or example project (add a description if necessary).
 
 3. **guess the number game**
@@ -16,19 +16,16 @@ This repository contains a collection of Python scripts aimed at improving my Py
 4. **guess the number project**
    - Another variation of the guessing game project.
 
-5. **indeoendent 1**
+5. **independent work 1**
    - Project description needed (you can update this later).
 
-6. **must.py**
-   - A script showcasing a specific functionality (add a description based on the project's purpose).
-
-7. **python ball game**
+8. **python ball game**
    - A basic game that involves controlling or simulating a ball using Python (e.g., with `pygame` or other libraries).
 
-8. **resulting csv file project.py**
+9. **resulting csv file project.py**
    - A script to process data and output the result in a CSV format.
 
-9. **stopwatch**
+10. **stopwatch**
    - A project that simulates a stopwatch, keeping track of time in a game or application.
 
 ## Notes
